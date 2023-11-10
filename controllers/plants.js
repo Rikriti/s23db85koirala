@@ -1,15 +1,27 @@
 var plants = require('../models/plants');
 // List of all plantss
-exports.plants_list = async function(req, res) {
-    try{
-    theplantss = await plants.find();
-    res.send(theplantss);
-    }
-    catch(err){
-    res.status(500);
-    res.send(`{"error": ${err}}`);
-    }
-    };
+// exports.plants_list = async function(req, res) {
+//     try{
+//     theplantss = await plants.find();
+//     res.send(theplantss);
+//     }
+//     catch(err){
+//     res.status(500);
+//     res.send(`{"error": ${err}}`);
+//     }
+//     };
+
+exports.plants_detail = async function(req, res) {
+  console.log("detail" + req.params.id)
+  try {
+  result = await plants.findById( req.params.id)
+  res.send(result)
+  } catch (error) {
+  res.status(500)
+  res.send(`{"error": document for id ${req.params.id} not found`);
+  }
+  };
+  
     
 
 // for a specific plants.
