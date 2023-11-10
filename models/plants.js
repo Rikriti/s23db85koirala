@@ -4,5 +4,5 @@ const plantsSchema = mongoose.Schema({
     category: String,
     price: Number
 })
-module.exports = mongoose.model("Plants",
+module.exports = mongoose.model("plants",
     plantsSchema)
