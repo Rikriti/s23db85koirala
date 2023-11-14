@@ -1,0 +1,20 @@
+extends layout
+block content
+  h1= title
+  - let plantsid = toShow._id
+  - let Name = toShow.name
+  - let Category = toShow.category
+  - let Price = toShow.price
+  div
+    div.row
+      div(class='costumeAttr mr-3') Plants ID is:
+        div #{plantsid}
+    div.row
+      div(class='costumeAttr mr-3') Name is:
+        div #{name}
+    div.row
+      div(class='costumeAttr mr-3') Category is:
+        div #{category}
+    div.row
+      div(class='costumeAttr mr-3') Price is:
+        div #{price}
