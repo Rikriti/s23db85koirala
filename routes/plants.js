@@ -7,10 +7,10 @@ router.get('/',plants_controlers.plants_view_all_Page);
 router.get('/plants/:id', plants_controlers.plants_detail);
 module.exports = router;
 
-/* GET detail Book page */
+/* GET detail plants page */
 router.get('/detail', plants_controlers.plants_view_one_Page);
 
-// /* GET create Book page */
+// /* GET create plants page */
 // router.get('/create', plants_controlers.plants_create_Page);
 
 // /* GET create update page */
@@ -19,6 +19,6 @@ router.get('/detail', plants_controlers.plants_view_one_Page);
 /* GET delete costume page */
 router.get('/delete', plants_controlers.plants_delete_Page);
 
-/* GET Book */
+/* GET plants */
 // router.get('/', plants_controlers.plants_view_all_Page );
 // module.exports = router;
