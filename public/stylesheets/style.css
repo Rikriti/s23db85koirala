@@ -8,12 +8,17 @@ a {
 }
 
 .costumeAttr {
+  background-color: aquamarine;
+  width: 120px;
+  }
+  
+  .costumeAttr1{
   background-color: rgb(167, 97, 221);
   width: 320px;
   height:50px;
   color:white;
   }
-  
+
   .detailh1{
     color: rgb(143, 60, 207);
     text-shadow: 2px 2px 4px rgba(37, 36, 36, 0.5);
