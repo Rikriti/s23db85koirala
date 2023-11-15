@@ -1,20 +1,23 @@
 extends layout
 block content
   h1= title
+
   - let plantsid = toShow._id
-  - let Name = toShow.name
-  - let Category = toShow.category
-  - let Price = toShow.price
+  - let name = toShow.name
+  - let category = toShow.category
+  - let price = toShow.price 
+
   div
     div.row
-      div(class='costumeAttr mr-3') Plants ID is:
-        div #{plantsid}
+      div(class='costumeAttr mr-3') Plant ID is:
+        div #{plantsid}  
     div.row
-      div(class='costumeAttr mr-3') Name is:
+      div(class='costumeAttr mr-3') Plant is:
         div #{name}
     div.row
-      div(class='costumeAttr mr-3') Category is:
-        div #{category}
+      div(class='costumeAttr mr-3') Plant marks is:
+        div #{category}  
     div.row
-      div(class='costumeAttr mr-3') Price is:
+      div(class='costumeAttr mr-3') Plant course is:
         div #{price}
+  

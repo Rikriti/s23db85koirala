@@ -4,8 +4,8 @@ var router = express.Router();
 
 router.get('/',plants_controlers.plants_view_all_Page);
 
-router.get('/plants/:id', plants_controlers.plants_detail);
-module.exports = router;
+// router.get('/plants/:id', plants_controlers.plants_detail);
+// module.exports = router;
 
 /* GET detail plants page */
 router.get('/detail', plants_controlers.plants_view_one_Page);
@@ -21,4 +21,4 @@ router.get('/delete', plants_controlers.plants_delete_Page);
 
 /* GET plants */
 // router.get('/', plants_controlers.plants_view_all_Page );
-// module.exports = router;
+module.exports = router;

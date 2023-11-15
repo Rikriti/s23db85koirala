@@ -5,26 +5,26 @@ block content
   if (toShow == null)
     h2 No instance to delete
   else
-  - let plantsid = toShow._id
-  - let Name = toShow.name
-  - let Category = toShow.category
-  - let Price = toShow.price
+    - let plantsid = toShow._id
+    - let name = toShow.name
+    - let category = toShow.category
+    - let price = toShow.price
     - let actionid = "/resource/plants/" + plantsid
     script.
       let actionid = "#{actionid}"
     div
       div.row
         div(class='costumeAttr mr-3') Plants ID is:
-        div #{plantsid}
+          div #{plantsid}
       div.row
-        div(class='costumeAttr mr-3')  Name is:
-        div #{name}
+        div(class='costumeAttr mr-3') Name is:
+          div #{name}
       div.row
         div(class='costumeAttr mr-3') Category is:
-        div #{category}
+          div #{category}
       div.row
         div(class='costumeAttr mr-3') Price is:
-        div #{price}
+          div #{price}
       button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
       button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
     script.
