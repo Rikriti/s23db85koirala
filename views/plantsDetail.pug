@@ -1,25 +1,23 @@
 extends layout
 
 block content
-  h1(class='detailh1')= title
+  - if (toShow != null)
+    h1(class='detailh1')= title
 
-  - let plantsid = toShow._id
-  - let name = toShow.name
-  - let category = toShow.category
-  - let price = toShow.price 
+    - let plantsid = toShow._id
+    - let name = toShow.name
+    - let category = toShow.category
+    - let price = toShow.price 
 
-  div
-    div.row
-      div(class='costumeAttr1') Plant ID is: #{plantsid} 
-    div.row
-      div(class='costumeAttr1') Plant name is: #{name}
-    div.row
-      div(class='costumeAttr1') Plant Category is: #{category} 
-    div.row
-      div(class='costumeAttr1') Plant price is: #{price}
-
-
-
-
-
-
+    div
+      div.row
+        div(class='costumeAttr1') Plant ID is: #{plantsid} 
+      div.row
+        div(class='costumeAttr1') Plant name is: #{name}
+      div.row
+        div(class='costumeAttr1') Plant Category is: #{category} 
+      div.row
+        div(class='costumeAttr1') Plant price is: #{price}
+  - else
+    script.
+      alert('Error: No plant found with the provided ID.');
