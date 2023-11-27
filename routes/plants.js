@@ -1,6 +1,16 @@
 var express = require('express');
 const plants_controlers= require('../controllers/plants');
 var router = express.Router();
+// A little function to check if we have an authorized user and continue on
+//or redirect to login.
+const secured = (req, res, next) => {
+if (req.user){
+return next();
+}
+res.redirect("/login");
+}
+
+
 
 router.get('/',plants_controlers.plants_view_all_Page);
 
@@ -14,7 +24,7 @@ router.get('/detail', plants_controlers.plants_view_one_Page);
 router.get('/create', plants_controlers.plants_create_Page);
 
 /* GET create update page */
-router.get('/update', plants_controlers.plants_update_Page);
+router.get('/update',secured, plants_controlers.plants_update_Page);
 
 /* GET delete costume page */
 router.get('/delete', plants_controlers.plants_delete_Page);
