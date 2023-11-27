@@ -1,7 +1,8 @@
 var express = require("express");
-var passport = require("passport");
 var router = express.Router();
 var Account = require("../models/account");
+var passport = require('passport');
+
 router.get("/", function (req, res) {
   res.render("index", { title: "Plant App", user: req.user });
 });
