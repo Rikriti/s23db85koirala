@@ -27,24 +27,24 @@ block content
         input#price(type='number', name='price', value=price )
         input(type="submit")
 
+      script.
+        document.forms['CostumeForm'].addEventListener('submit', (event) => {
+          event.preventDefault();
+          // TODO do something here to show user that the form is being submitted
+          fetch(event.target.action, {
+            method: 'PUT',
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+          }).then((resp) => {
+            return resp.json(); // or resp.text() or whatever the server sends
+          }).then((body) => {
+            alert("Update succeeded");
+            // TODO handle body
+          }).catch((error) => {
+            // TODO handle error
+            alert("Update failed " + error);
+          });
+        });
+
   - else
     script.
       alert('Error: No plant found with the provided ID.');
-
-    script.
-      document.forms['CostumeForm'].addEventListener('submit', (event) => {
-        event.preventDefault();
-        // TODO do something here to show user that the form is being submitted
-        fetch(event.target.action, {
-          method: 'PUT',
-          body: new URLSearchParams(new FormData(event.target)) // event.target is the form
-        }).then((resp) => {
-          return resp.json(); // or resp.text() or whatever the server sends
-        }).then((body) => {
-          alert("Update succeeded");
-          // TODO handle body
-        }).catch((error) => {
-          // TODO handle error
-          alert("Update failed " + error);
-        });
-      });
