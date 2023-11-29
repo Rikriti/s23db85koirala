@@ -18,16 +18,16 @@ router.get('/',plants_controlers.plants_view_all_Page);
 // module.exports = router;
 
 /* GET detail plants page */
-router.get('/detail', plants_controlers.plants_view_one_Page);
+router.get('/detail',secured, plants_controlers.plants_view_one_Page);
 
 /* GET create plants page */
-router.get('/create', plants_controlers.plants_create_Page);
+router.get('/create',secured, plants_controlers.plants_create_Page);
 
 /* GET create update page */
 router.get('/update',secured, plants_controlers.plants_update_Page);
 
 /* GET delete costume page */
-router.get('/delete', plants_controlers.plants_delete_Page);
+router.get('/delete',secured, plants_controlers.plants_delete_Page);
 
 /* GET plants */
 // router.get('/', plants_controlers.plants_view_all_Page );

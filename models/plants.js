@@ -1,7 +1,12 @@
 const mongoose = require("mongoose")
 const plantsSchema = mongoose.Schema({
-    name: String,
-    category: String,
+    name: {
+        type:String,
+        length:20,
+    },
+    category:{
+        type:String,
+    },
     price:{
         type: Number,
         min: 10,

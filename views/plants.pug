@@ -8,9 +8,16 @@ block content
   div(class="container-fluid")
   div(class="row m-1")
     each item in items
-      - let destination = `dispatch(\"/plants/update?id=${item._id}\")`
+      - let update = `dispatch(\"/plants/update?id=${item._id}\")`
+      - let details = `dispatch(\"/plants/detail?id=${item._id}\")`
+      - let del = `dispatch(\"/plants/delete?id=${item._id}\")`
+      - let create = `dispatch(\"/plants/create")`
       div(class="row-sm-2", class="m-1") Item #{item.name}(#{item.category}) is #{item.price}
-        button.btn(class="btn-primary ml-1", onclick=destination) Update
+      div(class="row-sm-2", class="m-1")
+        button.btn(class="btn-primary ml-1", onclick=update) Update
+        button.btn(class="btn-info ml-1", onclick=details) Details
+        button.btn(class="btn-danger ml-1", onclick=del) Delete
+        button.btn(class="btn-warning ml-1", onclick=create) Create
   script.
     function dispatch(path){
       window.location.href=path
